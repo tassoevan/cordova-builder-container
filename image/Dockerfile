@@ -28,4 +28,8 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 RUN npm install -g cordova && \
     /usr/bin/cordova telemetry off
 
+# Setup for container
+VOLUME /src
+WORKDIR /src
+
 ENTRYPOINT [ "/usr/bin/cordova", "--no-update-notifier" ]
